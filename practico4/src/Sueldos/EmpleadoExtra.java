@@ -18,6 +18,18 @@ public class EmpleadoExtra extends Empleado{
         return horasTrabajadas;
     }
 
+    public double getValorHora() {
+        return valorHora;
+    }
+
+    public void setValorHora(double valorHora) {
+        this.valorHora = valorHora;
+    }
+
+    public void setHorasTrabajadas(double horasTrabajadas) {
+        this.horasTrabajadas = horasTrabajadas;
+    }
+
     @Override
     public double calcularSueldo(){
     return getSueldo() + (horasTrabajadas * valorHora);
