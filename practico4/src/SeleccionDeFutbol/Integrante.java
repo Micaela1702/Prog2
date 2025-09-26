@@ -70,5 +70,29 @@ public abstract class Integrante {
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
+
+    public boolean equals (Object o1){
+        if(o1 == null){
+            return false;
+        }
+        Integrante i = (Integrante) o1;
+        return this.pasaporte.equals(i.getPasaporte());
+    }
+    @Override
+    public String toString() { // consultar
+        return nombre + " " + apellido + " - Estado: " + estado +
+                " - Disponible: " + (estaDisponibleParaEvento() ? "Sí" : "No");
+    }
+
+    /* utilizar el ?, es equivalente a:
+        String disponible;
+        if (estaDisponibleParaEvento()) {
+            disponible = "Sí";
+        } else {
+            disponible = "No";
+        }
+return nombre + " " + apellido + " - Estado: " + estado +
+       " - Disponible: " + disponible;
+    */
 }
 

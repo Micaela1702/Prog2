@@ -10,13 +10,12 @@ public class Contingente {
         this.integrantes = new ArrayList<>();
     }
 
-
-    public void agregarIntegrante(Integrante i){ // revisar
-        for(Integrante in : integrantes){
-            if(!(in.getPasaporte().equals(i.getPasaporte()))){
-               return;
-            }
+    public void agregarIntegrante(Integrante i){
+        if (!integrantes.contains(i)){ // si no contiene agrego
+            integrantes.add(i);
         }
-        integrantes.add(i);
+    }
+    public ArrayList<Integrante> getIntegrantes(){
+        return new ArrayList<>(integrantes); // copia de el ArrayList
     }
 }
