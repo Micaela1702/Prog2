@@ -1,7 +1,5 @@
 package SistemaDeEncuestas;
 
-import java.util.ArrayList;
-
 public class Empleado {
     private String nombre;
     private String DNI;
