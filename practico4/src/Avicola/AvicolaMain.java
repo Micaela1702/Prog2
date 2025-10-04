@@ -1,26 +1,51 @@
-package Empresa;
+package Avicola;
 
-public class RegistroEmpresaMain {
+import java.util.ArrayList;
+
+public class AvicolaMain {
     public static void main(String[] args) {
-        Empresa empresa = new Empresa();
+        ArrayList<ProductoAvicola> productos = new ArrayList<>();
 
-        // Creamos un empleado
-        Empleado emp1 = new Empleado("Juan", "Pérez", "Secretario", 33, 50000, 400.000);
+        // Producto fresco
+        ProductoFresco fresco = new ProductoFresco(
+                1001, "2025-11-01", "2025-09-20", "Granja Don Pepe"
+        );
 
-        // Creamos un usuario final
-        UsuarioFinal user1 = new UsuarioFinal("Ana", "Gómez", "Secretaria", 25, "1234", "123444224");
+        // Producto refrigerado
+        ProductoRefrigerado refrigerado = new ProductoRefrigerado(
+                1002, "2025-12-15", "Granja Los Álamos", 123, 4.0, "2025-09-22"
+        );
 
-        // Creamos un jerárquico con empleados a cargo
-        Jerarquico jefe = new Jerarquico("Carlos", "López", "Repositor", 200, 100000, 10.000);
-        jefe.agregarEmpleado(emp1);
+        // Producto congelado por aire
+        CongeladoPorAire congeladoAire = new CongeladoPorAire(
+                1003, "2026-03-10", "Granja Santa Rosa", 456, -20.0, "2025-09-25",
+                78.0, 21.0, 0.03, 0.97
+        );
 
-        // Los agregamos a la empresa
-        empresa.agregarPersona(emp1);
-        empresa.agregarPersona(user1);
-        empresa.agregarPersona(jefe);
+        // Producto congelado por agua
+        CongeladoPorAgua congeladoAgua = new CongeladoPorAgua(
+                1004, "2026-04-01", "Granja La Esperanza", 789, -18.0, "2025-09-26",
+                30.0, 0.5
+        );
 
-        // Exportamos el registro
-        System.out.println(empresa.exportarRegistro());
+        // Producto congelado por nitrógeno
+        CongeladoPorNitrogeno congeladoNitrogeno = new CongeladoPorNitrogeno(
+                1005, "2026-05-20", "Granja Los Pinos", 999, -25.0, "2025-09-27",
+                "Inmersión directa", 120
+        );
+
+        // Agregar a la lista
+        productos.add(fresco);
+        productos.add(refrigerado);
+        productos.add(congeladoAire);
+        productos.add(congeladoAgua);
+        productos.add(congeladoNitrogeno);
+
+        // Mostrar etiquetas
+        System.out.println("=== ETIQUETAS DE PRODUCTOS ===");
+        for (ProductoAvicola p : productos) {
+            System.out.println(p.getEtiqueta());
+        }
     }
 }
 

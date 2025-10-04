@@ -1,21 +1,27 @@
-package AlarmaSensorial;
+package Empresa;
 
-public class AlarmaSensorial {
-
+public class RegistroEmpresaMain {
     public static void main(String[] args) {
-        AlarmaSonora alarma = new AlarmaSonora();
+        Empresa empresa = new Empresa();
 
-        Sensor puerta = new Sensor("Puerta principal", false);
-        Sensor ventana = new Sensor("Ventana cocina", true);
-        Sensor movimiento = new Sensor("Living", true);
+        // Creamos un empleado
+        Empleado emp1 = new Empleado("Juan", "Pérez", "Secretario", 33, 50000, 400.000);
 
-        alarma.addSensor(puerta);
-        alarma.addSensor(ventana);
-        alarma.addSensor(movimiento);
+        // Creamos un usuario final
+        UsuarioFinal user1 = new UsuarioFinal("Ana", "Gómez", "Secretaria", 25, "1234", "123444224");
 
-        ventana.setActivado(true); // simulo que se abrió una ventana
+        // Creamos un jerárquico con empleados a cargo
+        Jerarquico jefe = new Jerarquico("Carlos", "López", "Repositor", 200, 100000, 10.000);
+        jefe.agregarEmpleado(emp1);
 
-        alarma.comprobar();
+        // Los agregamos a la empresa
+        empresa.agregarPersona(emp1);
+        empresa.agregarPersona(user1);
+        empresa.agregarPersona(jefe);
+
+        // Exportamos el registro
+        System.out.println(empresa.exportarRegistro());
     }
 }
+
 
