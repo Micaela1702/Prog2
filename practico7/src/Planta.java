@@ -35,10 +35,6 @@ public class Planta {
         return nombresVulgares;
     }
 
-    public void setNombresVulgares(ArrayList<String> nombresVulgares) {
-        this.nombresVulgares = nombresVulgares;
-    }
-
     public String getClasificacionSuperior() {
         return clasificacionSuperior;
     }
