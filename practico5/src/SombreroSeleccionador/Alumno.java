@@ -46,4 +46,6 @@ public class Alumno {
     public void setCasa(Casa casa) {
         this.casa = casa;
     }
+
+    // implementar el equals
 }
