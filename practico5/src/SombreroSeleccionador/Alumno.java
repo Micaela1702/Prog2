@@ -47,5 +47,12 @@ public class Alumno {
         this.casa = casa;
     }
 
-    // implementar el equals
+    public boolean equals(Object otro) {
+        try {
+            Alumno otroAlumno = (Alumno) otro;
+            return nombre.equals(otroAlumno.getNombre());
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }
