@@ -1,12 +1,26 @@
 package CentroDeComputos;
 
 public class Computadora {
+    private String nombre;
     private double velocidad;
-    private double reqMemoria;
+    private Proceso procesoEnEjecucion;
 
-    public Computadora(double velocidad, double reqMemoria) {
+    public Computadora(String nombre, double velocidad) {
+        this.nombre = nombre;
         this.velocidad = velocidad;
-        this.reqMemoria = reqMemoria;
+
+    }
+
+    public void asignoProceso(Proceso proceso){
+        this.procesoEnEjecucion = proceso;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public double getVelocidad() {
@@ -15,13 +29,5 @@ public class Computadora {
 
     public void setVelocidad(double velocidad) {
         this.velocidad = velocidad;
-    }
-
-    public double getReqMemoria() {
-        return reqMemoria;
-    }
-
-    public void setReqMemoria(double reqMemoria) {
-        this.reqMemoria = reqMemoria;
     }
 }
