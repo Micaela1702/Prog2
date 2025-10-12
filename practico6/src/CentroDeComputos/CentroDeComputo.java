@@ -1,5 +1,7 @@
 package CentroDeComputos;
 
+import PuertoDeCereales.ColaPrioridad;
+
 public class CentroDeComputo {
     private String nombre;
 
@@ -8,6 +10,8 @@ public class CentroDeComputo {
 
     public CentroDeComputo(String nombre) {
         this.nombre = nombre;
+        this.computadoras = new ColaPorPrioridad();
+        this.procesos = new ColaPorPrioridad();
     }
 
     public void agregarComputadora(Computadora c){
