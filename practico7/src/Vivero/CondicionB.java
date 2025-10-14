@@ -1,6 +1,8 @@
+package Vivero;
+
 import java.util.ArrayList;
 
-public class CondicionB extends Buscador{
+public class CondicionB extends Buscador {
     private String palabra;
 
     @Override

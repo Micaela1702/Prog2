@@ -1,3 +1,4 @@
+package Vivero;
 
 public class CondicionA extends Buscador {
     private String palabraIncluye;

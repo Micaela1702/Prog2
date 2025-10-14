@@ -1,3 +1,5 @@
+package Vivero;
+
 public class BuscadorAND extends Buscador {
     private Buscador b1, b2;
 
