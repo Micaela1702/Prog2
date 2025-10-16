@@ -7,22 +7,13 @@ public class Documento {
     private ArrayList<String> autores;
     private String contenidoTextual;
     private ArrayList<String> palabrasClave;
-    private int cantidadPalabras;
+
 
     public Documento(String titulo, String contenidoTextual, int cantidadPalabras) {
         this.titulo = titulo;
         this.autores = new ArrayList<>();
         this.contenidoTextual = contenidoTextual;
         this.palabrasClave = new ArrayList<>();
-        this.cantidadPalabras = cantidadPalabras;
-    }
-
-    public int getCantidadPalabras() {
-        return cantidadPalabras;
-    }
-
-    public void setCantidadPalabras(int cantidadPalabras) {
-        this.cantidadPalabras = cantidadPalabras;
     }
 
     public void agregarPalabrasClaves(String palabraClave){
