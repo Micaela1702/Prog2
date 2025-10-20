@@ -28,7 +28,8 @@ public class CompuestaRepetitiva extends TareaCompuesta {
     public ArrayList<String> obtenerAcciones(){
         ArrayList<String> acciones = new ArrayList<>(); // creo una nueva lista vacía, y agrego tantas veces las acciones a realizar como marque el indicador de repeticiones
         for(int i = 0; i < indicadorRepeticiones; i++){
-            acciones.addAll(super.obtenerAcciones());
+            acciones.addAll(super.obtenerAcciones()); // se llama al obtener acciones del método padre para recorrer la lista de tareas. Si no pongo
+                                                      // el super, llamo infinitas veces a este método. Con lo cuál me genera una recursión infinita.
         }
         return acciones;
     }
