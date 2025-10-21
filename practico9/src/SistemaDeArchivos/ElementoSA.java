@@ -1,6 +1,7 @@
 package SistemaDeArchivos;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public abstract class ElementoSA{
     private String nombre;
@@ -29,4 +30,11 @@ public abstract class ElementoSA{
 
     public abstract double calcularTamanio();
 
+    public ArrayList<ElementoSA> buscar(Buscador condicion) {
+        ArrayList<ElementoSA> resultado = new ArrayList<>();
+        if (condicion.cumple(this)) { // si este elemento cumple
+            resultado.add(this); // me agrego yo al resultado
+        }
+        return resultado;
+    }
 }

@@ -1,13 +1,16 @@
 package SistemaDeArchivos;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class AccesoDirecto extends ElementoSA{
 
     private double TAMANIOFIJO=1.00;
+    private ElementoSA loQueApunta;
 
-    public AccesoDirecto(String nombre, LocalDate fechaCreacion) {
+    public AccesoDirecto(String nombre, LocalDate fechaCreacion, ElementoSA loQueApunta) {
         super(nombre, fechaCreacion);
+        this.loQueApunta = loQueApunta;
     }
 
     @Override
@@ -15,5 +18,8 @@ public class AccesoDirecto extends ElementoSA{
         return TAMANIOFIJO;
     }
 
-
+    @Override
+    public ArrayList<ElementoSA> buscar(Buscador condicion) {
+        return super.buscar(condicion);
+    }
 }

@@ -1,8 +1,9 @@
 package SistemaDeArchivos;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
-public class Archivo extends ElementoSA{
+public class Archivo extends ElementoSA {
     private double tamanio;
 
     public Archivo(String nombre, LocalDate fechaCreacion, double tamanio) {
@@ -15,4 +16,7 @@ public class Archivo extends ElementoSA{
         return tamanio;
     }
 
+    public ArrayList<ElementoSA> buscar(Buscador condicion) {
+        return super.buscar(condicion);
+    }
 }
