@@ -14,8 +14,12 @@ public class Playlist extends Archivo {
     }
 
     public void agregarElemento(Archivo pista) {
-       Playlist.add(pista);
-
+        if(!Playlist.contains(pista)) {
+            Playlist.add(pista);
+        }
+    }
+    public void eliminarElemento(Archivo pistaAEliminar){
+        Playlist.remove(pistaAEliminar);
     }
 
     @Override
@@ -30,17 +34,7 @@ public class Playlist extends Archivo {
     public ArrayList<PistaDeMusica> buscar(Buscador condicion) {
         ArrayList<PistaDeMusica> resultado = new ArrayList<>();
         for (Archivo archivo : Playlist) {
-            if (archivo instanceof PistaDeMusica) {
-                PistaDeMusica pista = (PistaDeMusica) archivo; // a archivo lo trato como pista de música
-                // Si es PistaParaTodos, se incluye siempre. Si no, se evalúa la condición.
-                if (pista instanceof PistaParaTodos || condicion.cumple(pista)) {
-                    resultado.add(pista);
-                }
-            } else if (archivo instanceof Playlist) {
-                Playlist subPlaylist = (Playlist) archivo; // a archivo lo trato como playlist
-                resultado.addAll(subPlaylist.buscar(condicion)); // agrego a la lista, las playlist que cumplen con la condicion.
-                // se llama recursivamente a buscar si el elemento es otra playlist.
-            }
+           resultado.addAll(archivo.buscar(condicion));
         }
         return resultado;
     }

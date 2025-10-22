@@ -72,7 +72,9 @@ public class PistaDeMusica extends Archivo{
         return duracion;
     }
 
-    public ArrayList<PistaDeMusica> buscar(Buscador condicion){
+    @Override
+
+    public ArrayList<PistaDeMusica> buscar(Buscador condicion) {
         ArrayList<PistaDeMusica> resultado = new ArrayList<>();
         if(condicion.cumple(this)){
             resultado.add(this);
