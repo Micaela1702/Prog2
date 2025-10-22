@@ -1,5 +1,7 @@
 package JuegoDeGolosinas;
 
+import JuegoDeGolosinas.Condiciones.Buscador;
+
 import java.util.ArrayList;
 
 public class Tablero {

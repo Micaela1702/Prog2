@@ -1,5 +1,8 @@
 package JuegoDeGolosinas;
 
+import JuegoDeGolosinas.Condiciones.Buscador;
+import JuegoDeGolosinas.Condiciones.BuscadorPorDestruccion;
+
 import java.util.ArrayList;
 
 public class JuegoMain {

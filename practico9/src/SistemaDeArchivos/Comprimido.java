@@ -1,5 +1,7 @@
 package SistemaDeArchivos;
 
+import SistemaDeArchivos.Condiciones.Buscador;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 

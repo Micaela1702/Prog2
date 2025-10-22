@@ -1,5 +1,7 @@
 package Musify;
 
+import Musify.Condiciones.Buscador;
+
 import java.util.ArrayList;
 
 public class PlayListPromocionada extends Playlist {

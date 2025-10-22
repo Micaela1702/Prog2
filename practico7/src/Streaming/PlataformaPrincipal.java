@@ -1,5 +1,8 @@
 package Streaming;
 
+import Streaming.Condiciones.CriterioDuracionGenero;
+import Streaming.Condiciones.CriterioRentabilidad;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 

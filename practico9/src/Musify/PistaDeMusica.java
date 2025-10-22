@@ -1,5 +1,7 @@
 package Musify;
 
+import Musify.Condiciones.Buscador;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 

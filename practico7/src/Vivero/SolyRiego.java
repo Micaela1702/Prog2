@@ -1,5 +1,7 @@
 package Vivero;
 
+import Vivero.Condiciones.Buscador;
+
 public class SolyRiego extends Buscador {
     private int referenciaSol;
     private int referenciaRiego;

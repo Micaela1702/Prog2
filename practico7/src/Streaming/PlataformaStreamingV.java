@@ -1,5 +1,7 @@
 package Streaming;
 
+import Streaming.Condiciones.CriterioRentabilidad;
+
 import java.util.ArrayList;
 
 public class PlataformaStreamingV {
