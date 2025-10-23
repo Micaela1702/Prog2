@@ -1,12 +1,13 @@
 package Musify;
 import Musify.Condiciones.Buscador;
-
 import java.util.ArrayList;
 
 public abstract class Archivo {
     private String titulo;
 
     public abstract double getDuracion();
+    public abstract ArrayList<PistaDeMusica>buscar(Buscador condicion);
+
 
     public Archivo(String titulo) {
         this.titulo = titulo;
@@ -20,5 +21,4 @@ public abstract class Archivo {
         this.titulo = titulo;
     }
 
-    public abstract ArrayList<PistaDeMusica>buscar(Buscador condicion);
 }

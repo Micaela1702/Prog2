@@ -10,7 +10,7 @@ public class Playlist3600 extends Playlist{
     }
 
     public void agregarElemento(Archivo archivo) {
-        if (this.getDuracion() < duracion) { // hago referencia a la duración de esta playlist en particular
+        if (this.getDuracion() < duracion) { // obtengo la duración de yo como objeto (a eso hace referencia el this). Y si es menor, se agrega el elemento
             super.agregarElemento(archivo);
         }
     }
