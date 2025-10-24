@@ -1,8 +1,10 @@
 package SitioWebNoticias;
 
+import SitioWebNoticias.Condiciones.Buscador;
+
 import java.util.ArrayList;
 
-public class Noticia {
+public class Noticia extends Contenido{
     private String titulo;
     private ArrayList<String> palabras;
     private String introduccion;
@@ -73,4 +75,17 @@ public class Noticia {
        return texto.length();
     }
 
+    @Override
+    public double obtenerCantidadNoticias() {
+        return 1;
+    }
+
+    @Override
+    public ArrayList<Noticia> buscar(Buscador condicion) {
+        ArrayList<Noticia> resultado = new ArrayList<>();
+        if(condicion.cumple(this)){
+            resultado.add(this);
+        }
+    return resultado;
+    }
 }
