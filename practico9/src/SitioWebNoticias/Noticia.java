@@ -23,20 +23,16 @@ public class Noticia extends Contenido{
         this.seccion = seccion;
     }
 
+    public boolean tienePalabra(String palabra){
+        return palabras.contains(palabra);
+    }
+
     public String getTitulo() {
         return titulo;
     }
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
-    }
-
-    public ArrayList<String> getPalabras() {
-        return palabras;
-    }
-
-    public void setPalabras(ArrayList<String> palabras) {
-        this.palabras = palabras;
     }
 
     public String getIntroduccion() {
