@@ -1,6 +1,9 @@
 package Aseguradora;
 
+import Aseguradora.Condiciones.Buscador;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class SeguroTemporal extends Cartera {
     private LocalDate fechaInicio;
@@ -54,5 +57,14 @@ public class SeguroTemporal extends Cartera {
     @Override
     public int getNumeroPoliza() {
         return seguro.getNumeroPoliza();
+    }
+
+    @Override
+    public ArrayList<SeguroSimple> buscar(Buscador condicion) {
+        ArrayList<SeguroSimple> resultado = new ArrayList<>();
+        if (!estaVencido()) {
+            resultado.addAll(seguro.buscar(condicion));
+        }
+        return resultado;
     }
 }

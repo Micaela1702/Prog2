@@ -1,16 +1,19 @@
 package Aseguradora;
 
 import Aseguradora.Calculadores.CalcularCosto;
+import Aseguradora.Condiciones.Buscador;
+
+import java.util.ArrayList;
 
 public class SeguroSimple extends Cartera {
 
     private int numeroPoliza;
     private String descripcion;
     private double montoAsegurado;
-    private int dniTitular;
+    private String dniTitular;
     private CalcularCosto calcular;
 
-    public SeguroSimple(int numeroPoliza, String descripcion, double montoAsegurado, int dniTitular, CalcularCosto calcular) {
+    public SeguroSimple(int numeroPoliza, String descripcion, double montoAsegurado, String dniTitular, CalcularCosto calcular) {
         this.numeroPoliza = numeroPoliza;
         this.descripcion = descripcion;
         this.montoAsegurado = montoAsegurado;
@@ -25,6 +28,15 @@ public class SeguroSimple extends Cartera {
 
     public int getNumeroPoliza() {  // lo calcula con sus atributos
         return numeroPoliza;
+    }
+
+    @Override
+    public ArrayList<SeguroSimple> buscar(Buscador condicion) {
+        ArrayList<SeguroSimple> resultado = new ArrayList<>();
+        if(condicion.cumple(this)){
+            resultado.add(this);
+        }
+        return resultado;
     }
 
     public void setNumeroPoliza(int numeroPoliza) {
@@ -47,11 +59,11 @@ public class SeguroSimple extends Cartera {
         this.montoAsegurado = montoAsegurado;
     }
 
-    public int getDniTitular() {
+    public String getDniTitular() {
         return dniTitular;
     }
 
-    public void setDniTitular(int dniTitular) {
+    public void setDniTitular(String dniTitular) {
         this.dniTitular = dniTitular;
     }
 

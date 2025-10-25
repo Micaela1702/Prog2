@@ -1,5 +1,7 @@
 package Aseguradora;
 
+import Aseguradora.Condiciones.Buscador;
+
 import java.util.ArrayList;
 
 public class SeguroIntegrador extends Cartera {
@@ -48,5 +50,14 @@ public class SeguroIntegrador extends Cartera {
             }
         }
         return polizaMayor;
+    }
+
+    @Override
+    public ArrayList<SeguroSimple> buscar(Buscador condicion) {
+        ArrayList<SeguroSimple> resultado = new ArrayList<>();
+        for(Cartera seguro: seguros){
+           resultado.addAll(seguro.buscar(condicion));
+        }
+        return resultado;
     }
 }
