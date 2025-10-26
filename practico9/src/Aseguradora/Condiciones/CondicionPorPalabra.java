@@ -12,6 +12,6 @@ public class CondicionPorPalabra extends Buscador{
 
     @Override
     public boolean cumple(SeguroSimple seguro) {
-        return seguro.getDescripcion().contains(palabra);
+        return seguro.tienePalabra(palabra);
     }
 }

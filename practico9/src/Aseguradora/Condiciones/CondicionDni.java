@@ -3,14 +3,14 @@ package Aseguradora.Condiciones;
 import Aseguradora.SeguroSimple;
 
 public class CondicionDni extends Buscador{
-    private String dni;
+    private int dni;
 
-    public CondicionDni(String dni) {
+    public CondicionDni(int dni) {
         this.dni = dni;
     }
 
     @Override
     public boolean cumple(SeguroSimple seguroSimple) {
-        return seguroSimple.getDniTitular().equals(dni);
+        return seguroSimple.getDniTitular() == dni;
     }
 }

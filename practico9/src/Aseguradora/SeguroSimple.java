@@ -10,10 +10,10 @@ public class SeguroSimple extends Cartera {
     private int numeroPoliza;
     private String descripcion;
     private double montoAsegurado;
-    private String dniTitular;
+    private int dniTitular;
     private CalcularCosto calcular;
 
-    public SeguroSimple(int numeroPoliza, String descripcion, double montoAsegurado, String dniTitular, CalcularCosto calcular) {
+    public SeguroSimple(int numeroPoliza, String descripcion, double montoAsegurado, int dniTitular, CalcularCosto calcular) {
         this.numeroPoliza = numeroPoliza;
         this.descripcion = descripcion;
         this.montoAsegurado = montoAsegurado;
@@ -33,7 +33,7 @@ public class SeguroSimple extends Cartera {
     @Override
     public ArrayList<SeguroSimple> buscar(Buscador condicion) {
         ArrayList<SeguroSimple> resultado = new ArrayList<>();
-        if(condicion.cumple(this)){
+        if (condicion.cumple(this)) {
             resultado.add(this);
         }
         return resultado;
@@ -59,12 +59,16 @@ public class SeguroSimple extends Cartera {
         this.montoAsegurado = montoAsegurado;
     }
 
-    public String getDniTitular() {
+    public int getDniTitular() {
         return dniTitular;
     }
 
-    public void setDniTitular(String dniTitular) {
+    public void setDniTitular(int dniTitular) {
         this.dniTitular = dniTitular;
+    }
+
+    public boolean tienePalabra(String palabra){
+        return descripcion.contains(palabra);
     }
 
 }
