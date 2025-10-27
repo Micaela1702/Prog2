@@ -24,7 +24,6 @@ public class Iteracion extends Accion {
         this.cantidadIteraciones = cantidadIteraciones;
     }
 
-
     @Override
     public double calcularTiempoEjecucion() {
         return accion.calcularTiempoEjecucion() * cantidadIteraciones;
@@ -36,15 +35,17 @@ public class Iteracion extends Accion {
     }
 
     @Override
+    public double getCantidadTarjetas() {
+        return 0;
+    }
+
+    @Override
     public ArrayList<ComandoSimple> buscar(Buscador condicion) {
-        ArrayList<ComandoSimple> resultado = new ArrayList<>();
+        return accion.buscar(condicion); // busco la acción que contiene
     }
 
     @Override
     public Accion copiar(Buscador condicion) {
-        Iteracion copia = new Iteracion(calcularTiempoEjecucion(), calcularGastoBateria(), getCantidadIteraciones());
-        if(condicion.cumple(this)){
-            copia.addElemento(this);
-        }
+        return accion.copiar(condicion);
     }
 }

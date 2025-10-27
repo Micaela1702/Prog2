@@ -34,6 +34,10 @@ public class ComandoSimple extends Accion {
         return gastoDeBateria;
     }
 
+    public double getCantidadTarjetas(){
+        return 1;
+    }
+
     @Override
     public ArrayList<ComandoSimple> buscar(Buscador condicion) {
         ArrayList<ComandoSimple> resultado = new ArrayList<>();

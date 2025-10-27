@@ -38,6 +38,15 @@ public class BloqueComando extends Accion {
         return gastoTotal + extraFijo * calcularTiempoEjecucion();
     }
 
+    @Override
+    public double getCantidadTarjetas() {
+        double totalTarjetas=0;
+        for (Accion accion: bloquesComandos){
+            totalTarjetas+=accion.getCantidadTarjetas();
+        }
+        return totalTarjetas;
+    }
+
     public void addElemento(Accion elemento){
         if(!bloquesComandos.isEmpty()){
             bloquesComandos.add(elemento);
