@@ -1,5 +1,9 @@
 package Kiko;
 
+import Kiko.Condiciones.Buscador;
+
+import java.util.ArrayList;
+
 public class ComandoSimple extends Accion {
 
     private String instruccion;
@@ -28,5 +32,24 @@ public class ComandoSimple extends Accion {
     @Override
     public double calcularGastoBateria() {
         return gastoDeBateria;
+    }
+
+    @Override
+    public ArrayList<ComandoSimple> buscar(Buscador condicion) {
+        ArrayList<ComandoSimple> resultado = new ArrayList<>();
+        if (condicion.cumple(this)) {
+            resultado.add(this);
+        }
+        return resultado;
+    }
+
+    @Override
+    public Accion copiar(Buscador condicion) {
+        ComandoSimple copia = new ComandoSimple(getInstruccion(), calcularGastoBateria(), calcularTiempoEjecucion());
+        if(condicion.cumple(this)){
+            return copia;
+        } else {
+            return null;
+        }
     }
 }
