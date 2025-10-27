@@ -12,9 +12,6 @@ public class Iteracion extends Accion {
         this.cantidadIteraciones = cantidadIteraciones;
     }
 
-    public Iteracion(int cantidadIteraciones) {
-        this.cantidadIteraciones = cantidadIteraciones;
-    }
 
     public int getCantidadIteraciones() {
         return cantidadIteraciones;
