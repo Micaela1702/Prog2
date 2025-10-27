@@ -21,6 +21,7 @@ public class Iteracion extends Accion {
         this.cantidadIteraciones = cantidadIteraciones;
     }
 
+
     @Override
     public double calcularTiempoEjecucion() {
         return accion.calcularTiempoEjecucion() * cantidadIteraciones;
@@ -43,6 +44,10 @@ public class Iteracion extends Accion {
 
     @Override
     public Accion copiar(Buscador condicion) {
-        return accion.copiar(condicion);
+        if (tieneElementos()) { // chequear bien esto
+            return accion.copiar(condicion);
+        } else {
+            return null;
+        }
     }
 }
