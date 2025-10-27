@@ -20,8 +20,18 @@ public class FiguritaLimitada extends Figurita{
         this.cantidadDisponibles = cantidadDisponibles;
     }
 
+    public double getPrecioBase(){
+        return super.calcularPrecio();
+    }
+
     @Override
     public double calcularPrecio(){
-        return calcular.calcularPrecio(this);
+        double precioFiguritaLimitada = calcular.calcularPrecio(this);
+        if(precioFiguritaLimitada < getPrecioBase()){
+            return getPrecioBase();
+        }
+        else {
+            return precioFiguritaLimitada;
+        }
     }
 }
