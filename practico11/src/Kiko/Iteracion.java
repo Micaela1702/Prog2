@@ -44,10 +44,6 @@ public class Iteracion extends Accion {
 
     @Override
     public Accion copiar(Buscador condicion) {
-        if (tieneElementos()) { // chequear bien esto
-            return accion.copiar(condicion);
-        } else {
-            return null;
-        }
+        return accion.copiar(condicion); // que tenga elementos lo controlo en la clase bloque comando o simple.
     }
 }
