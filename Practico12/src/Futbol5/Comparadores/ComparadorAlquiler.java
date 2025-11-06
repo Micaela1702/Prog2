@@ -13,6 +13,6 @@ public class ComparadorAlquiler implements Comparator<Socio> {
 
     @Override
     public int compare(Socio socio1, Socio socio2) {
-        return Integer.compare(socio1.cantidadDeAlquileresPorCancha(idCancha), socio2.cantidadDeAlquileresPorCancha(idCancha));
+        return socio1.cantidadDeAlquileresPorCancha(idCancha) - socio2.cantidadDeAlquileresPorCancha(idCancha);
     }
 }

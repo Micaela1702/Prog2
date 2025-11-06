@@ -12,5 +12,5 @@ public class CondicionNOT extends Condicion{
     @Override
     public boolean cumple(Socio socio) {
         return !condicion.cumple(socio);
-    }f
+    }
 }
