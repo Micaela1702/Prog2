@@ -25,21 +25,31 @@ public class Socio {
 
     public boolean canchaAlquilada(int idCanchaBuscada){
         for(AlquilerCancha alquiler: alquilerCanchas){
-            if(alquiler.estaAlquilada(idCanchaBuscada)){
+            if(alquiler.getId_cancha() == idCanchaBuscada){
                 return true;
             }
         }
         return false;
     }
 
+
     public int cantidadDeAlquileresPorCancha(int idCanchaBuscada){
         int contador=0;
         for(AlquilerCancha alquiler: alquilerCanchas){
-            if(alquiler.estaAlquilada(idCanchaBuscada)){
+            if(alquiler.getId_cancha() == idCanchaBuscada){
                 contador++;
             }
         }
         return contador;
+    }
+
+    public boolean pagoAlquiler(int monto){
+       for (AlquilerCancha alquiler: alquilerCanchas){
+           if(alquiler.getPrecioAlquiler() > monto){
+               return true;
+           }
+       }
+       return false;
     }
 
     public String getNombre() {
