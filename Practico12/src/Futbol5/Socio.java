@@ -23,6 +23,25 @@ public class Socio {
         alquilerCanchas.add(cancha);
     }
 
+    public boolean canchaAlquilada(int idCanchaBuscada){
+        for(AlquilerCancha alquiler: alquilerCanchas){
+            if(alquiler.estaAlquilada(idCanchaBuscada)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int cantidadDeAlquileresPorCancha(int idCanchaBuscada){
+        int contador=0;
+        for(AlquilerCancha alquiler: alquilerCanchas){
+            if(alquiler.estaAlquilada(idCanchaBuscada)){
+                contador++;
+            }
+        }
+        return contador;
+    }
+
     public String getNombre() {
         return nombre;
     }

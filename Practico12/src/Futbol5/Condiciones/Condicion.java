@@ -1,4 +1,6 @@
-package Futbol5;
+package Futbol5.Condiciones;
+
+import Futbol5.Socio;
 
 public abstract class Condicion {
 

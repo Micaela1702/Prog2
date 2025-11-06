@@ -5,9 +5,14 @@ import Futbol5.Socio;
 import java.util.Comparator;
 
 public class ComparadorAlquiler implements Comparator<Socio> {
+    private int idCancha;
+
+    public ComparadorAlquiler(int idCancha) {
+        this.idCancha = idCancha;
+    }
 
     @Override
-    public int compare(Socio o1, Socio o2) {
-        return ;
+    public int compare(Socio socio1, Socio socio2) {
+        return Integer.compare(socio1.cantidadDeAlquileresPorCancha(idCancha), socio2.cantidadDeAlquileresPorCancha(idCancha));
     }
 }

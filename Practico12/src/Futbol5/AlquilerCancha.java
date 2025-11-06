@@ -13,6 +13,10 @@ public class AlquilerCancha {
         this.precioAlquiler = precioAlquiler;
     }
 
+    public boolean estaAlquilada(int id_cancha){
+        return this.id_cancha == id_cancha;
+    }
+
     public int getId_cancha() {
         return id_cancha;
     }
