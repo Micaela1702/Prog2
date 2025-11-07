@@ -4,6 +4,7 @@ import SistemaDeArchivos.Condiciones.Buscador;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 
 public abstract class ElementoSA{
@@ -33,11 +34,12 @@ public abstract class ElementoSA{
 
     public abstract double calcularTamanio();
 
-    public ArrayList<ElementoSA> buscar(Buscador condicion) {
+    public ArrayList<ElementoSA> OrdenarYbuscar(Buscador condicion, Comparator<ElementoSA> comp) {
         ArrayList<ElementoSA> resultado = new ArrayList<>();
         if (condicion.cumple(this)) { // si este elemento cumple
             resultado.add(this); // me agrego yo al resultado
         }
+        resultado.sort(comp);
         return resultado;
     }
 

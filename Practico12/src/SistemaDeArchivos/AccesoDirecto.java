@@ -4,6 +4,7 @@ import SistemaDeArchivos.Condiciones.Buscador;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class AccesoDirecto extends ElementoSA{
 
@@ -21,7 +22,7 @@ public class AccesoDirecto extends ElementoSA{
     }
 
     @Override
-    public ArrayList<ElementoSA> buscar(Buscador condicion) {
-        return super.buscar(condicion);
+    public ArrayList<ElementoSA> OrdenarYbuscar(Buscador condicion, Comparator<ElementoSA> comp) {
+        return super.OrdenarYbuscar(condicion, comp);
     }
 }

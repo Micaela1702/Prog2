@@ -31,23 +31,13 @@ public class Directorio extends ElementoSA {
         return tamanioTotal;
     }
 
-    public ArrayList<ElementoSA> buscar(Buscador condicion) {
+    public ArrayList<ElementoSA> OrdenarYbuscar(Buscador condicion, Comparator<ElementoSA> comp) {
         ArrayList<ElementoSA> resultado = new ArrayList<>();
         if (condicion.cumple((this))) { // si yo como elemento, cumplo, me agrego
             resultado.add(this);
         }
         for (ElementoSA elemento : elementos) { // como tiene elementos internos, debo preguntar si cada elemento, cumple con la condición
-            resultado.addAll(elemento.buscar(condicion));
-        }
-        return resultado;
-    }
-
-    public ArrayList<ElementoSA> ordenarPorCondicion(Buscador condicion, Comparator<ElementoSA> comp){
-        ArrayList<ElementoSA> resultado = new ArrayList<>();
-        for(ElementoSA elemento: elementos){
-            if(condicion.cumple(elemento)){
-                resultado.add(elemento);
-            }
+            resultado.addAll(elemento.OrdenarYbuscar(condicion, comp));
         }
         resultado.sort(comp);
         return resultado;
