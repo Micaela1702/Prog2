@@ -1,6 +1,5 @@
 package Futbol5;
 import Futbol5.Condiciones.Condicion;
-import java.util.Collections;
 import java.util.ArrayList;
 import java.util.Comparator;
 
