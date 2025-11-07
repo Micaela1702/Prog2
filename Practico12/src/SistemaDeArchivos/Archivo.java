@@ -19,8 +19,5 @@ public class Archivo extends ElementoSA {
         return tamanio;
     }
 
-    @Override
-    public ArrayList<ElementoSA> OrdenarYbuscar(Buscador condicion, Comparator<ElementoSA> comp) {
-        return super.OrdenarYbuscar(condicion, comp);
-    }
+
 }

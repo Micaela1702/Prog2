@@ -21,8 +21,5 @@ public class AccesoDirecto extends ElementoSA{
         return TAMANIOFIJO;
     }
 
-    @Override
-    public ArrayList<ElementoSA> OrdenarYbuscar(Buscador condicion, Comparator<ElementoSA> comp) {
-        return super.OrdenarYbuscar(condicion, comp);
-    }
+
 }
