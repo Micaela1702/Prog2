@@ -35,6 +35,11 @@ public class TareaTerminal extends Tarea{
         return estadoTarea;
     }
 
+    @Override
+    public double getDuracion() {
+        return 0;
+    }
+
     public void setEstadoTarea(String estadoTarea) {
         this.estadoTarea = estadoTarea;
     }
@@ -51,6 +56,10 @@ public class TareaTerminal extends Tarea{
 
     @Override
     public ArrayList<Tarea> buscar(Condicion condicion) {
-        return null;
+        ArrayList<Tarea> resultado = new ArrayList<>();
+        if (condicion.cumple(this)) {
+            resultado.add(this);
+        }
+        return resultado;
     }
 }
