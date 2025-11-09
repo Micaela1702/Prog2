@@ -3,10 +3,14 @@ package WorkBreakDownStructure;
 import WorkBreakDownStructure.Condiciones.Condicion;
 
 import java.time.LocalDate;
+
+import java.time.Period;
 import java.util.ArrayList;
 
 public class TareaCompuesta extends Tarea{
     ArrayList<Tarea> tareas;
+    Period diferencia = Period.between(getFechaInicio(), getFechaFin());
+
 
     public TareaCompuesta() {
         this.tareas = new ArrayList<>();
@@ -45,20 +49,9 @@ public class TareaCompuesta extends Tarea{
     }
 
     @Override
-    public LocalDate getFechaFinEstimada() {
-        return null;
+    public Period getDuracion() {
+        return diferencia;
     }
-
-    @Override
-    public String getEstadoTarea() {
-        return "";
-    }
-
-    @Override
-    public double getDuracion() {
-        return 0;
-    }
-
 
     @Override
     public ArrayList<Tarea> buscar(Condicion condicion) {
