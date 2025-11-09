@@ -1,7 +1,7 @@
 package Wallpapers;
 
 import Wallpapers.Condiciones.Condicion;
-import java.time.LocalDate;
+
 import java.util.ArrayList;
 
 
@@ -9,11 +9,11 @@ public class Wallpaper extends Plataforma implements Comparable<Wallpaper> {
     private String nombre;
     private Usuario usuario;
     private int cantidadDescargas;
-    private LocalDate anioCreacion;
+    private int anioCreacion;
     private ArrayList<String> palabrasClave;
 
 
-    public Wallpaper(String nombre, Usuario usuario, int cantidadDescargas, LocalDate anioCreacion) {
+    public Wallpaper(String nombre, Usuario usuario, int cantidadDescargas, int anioCreacion) {
         this.nombre = nombre;
         this.usuario = usuario;
         this.cantidadDescargas = cantidadDescargas;
@@ -68,11 +68,11 @@ public class Wallpaper extends Plataforma implements Comparable<Wallpaper> {
         this.cantidadDescargas = cantidadDescargas;
     }
 
-    public LocalDate getAnioCreacion() {
+    public int getAnioCreacion() {
         return anioCreacion;
     }
 
-    public void setAnioCreacion(LocalDate anioCreacion) {
+    public void setAnioCreacion(int anioCreacion) {
         this.anioCreacion = anioCreacion;
     }
 

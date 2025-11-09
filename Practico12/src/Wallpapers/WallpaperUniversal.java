@@ -1,7 +1,4 @@
-package Wallpapers.Condiciones;
-
-import Wallpapers.Usuario;
-import Wallpapers.Wallpaper;
+package Wallpapers;
 
 import java.time.LocalDate;
 

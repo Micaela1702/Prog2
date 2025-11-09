@@ -8,12 +8,29 @@ import java.util.Collections;
 
 public class Coleccion extends Plataforma {
     private String titulo;
+    private int descarga;
     private ArrayList<Plataforma> colecciones;
 
 
     public Coleccion(String titulo) {
         this.titulo = titulo;
         this.colecciones = new ArrayList<>();
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public int getDescarga() {
+        return descarga;
+    }
+
+    public void setDescarga(int descarga) {
+        this.descarga = descarga;
     }
 
     public int getCantidadPalabrasClave(){
@@ -47,7 +64,7 @@ public class Coleccion extends Plataforma {
         for(Plataforma coleccion: colecciones){
             totalDescargas+=coleccion.cantidadDescargas();
         }
-        return totalDescargas;
+        return totalDescargas + this.getDescarga();
     }
 
     @Override
