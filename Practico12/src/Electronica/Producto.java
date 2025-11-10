@@ -9,6 +9,36 @@ public class Producto extends ElementoP{
     private int cantidadStock;
     private static int stockProdDigitales;
 
+    public Producto(String nombre, double valor, int cantidadStock, int stockProdDigitales) {
+        this.nombre = nombre;
+        this.valor = valor;
+        this.cantidadStock = cantidadStock;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public void setCantidadProductosEnStock(int cantidadStock) {
+        this.cantidadStock = cantidadStock;
+    }
+
+    public static int getStockProdDigitales() {
+        return stockProdDigitales;
+    }
+
+    public static void setStockProdDigitales(int stockProdDigitales) {
+        Producto.stockProdDigitales = stockProdDigitales;
+    }
+
     @Override
     public double getValor() {
         return valor;
@@ -20,8 +50,13 @@ public class Producto extends ElementoP{
     }
 
     @Override
-    public int getPalabrasClave() {
-        return palabrasClaves.size();
+    public double getCantidadProductosEnStock() {
+       return cantidadStock;
+    }
+
+    @Override
+    public ArrayList<String> getPalabrasClave() {
+        return new ArrayList<>(palabrasClaves);
     }
     public void agregarPalabraClave(String palabra){
         palabrasClaves.add(palabra);

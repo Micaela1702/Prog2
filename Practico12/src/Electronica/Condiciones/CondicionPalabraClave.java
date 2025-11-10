@@ -10,6 +10,6 @@ public class CondicionPalabraClave extends Condicion {
     }
     @Override
     public boolean cumple(ElementoP elemento) {
-        return elemento.();
+        return elemento.getPalabrasClave().contains(palabraClave);
     }
 }
