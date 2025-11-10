@@ -11,7 +11,6 @@ public class TareaTerminal extends Tarea{
     private LocalDate fechaFinEstimada;
     private LocalDate fechaFinReal;
     private String estadoTarea;
-    private Period diferencia =  Period.between(getFechaInicio(), getFechaFinEstimada());
 
 
     public TareaTerminal(LocalDate fechaInicio, LocalDate fechaFinEstimada, LocalDate fechaFinReal, String estadoTarea) {
@@ -39,7 +38,7 @@ public class TareaTerminal extends Tarea{
 
     @Override
     public Period getDuracion() {
-        return diferencia;
+        return Period.between(this.fechaInicio, this.getFechaFin());
     }
 
     public void setEstadoTarea(String estadoTarea) {

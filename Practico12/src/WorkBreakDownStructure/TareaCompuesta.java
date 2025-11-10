@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class TareaCompuesta extends Tarea{
     ArrayList<Tarea> tareas;
-    Period diferencia = Period.between(getFechaInicio(), getFechaFin());
+
 
 
     public TareaCompuesta() {
@@ -50,7 +50,7 @@ public class TareaCompuesta extends Tarea{
 
     @Override
     public Period getDuracion() {
-        return diferencia;
+        return Period.between(getFechaInicio(), getFechaFin());
     }
 
     @Override
