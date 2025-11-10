@@ -1,5 +1,7 @@
 package Electronica;
 
+import Electronica.Condiciones.Condicion;
+
 import java.util.ArrayList;
 
 public class Categoria extends ElementoP {
@@ -37,15 +39,6 @@ public class Categoria extends ElementoP {
     }
 
     @Override
-    public double getCantidadProductos() {
-        double cantidadTotalProductos = 0;
-        for (ElementoP elemento : elementos) {
-            cantidadTotalProductos += elemento.getCantidadProductos();
-        }
-        return cantidadTotalProductos;
-    }
-
-    @Override
     public double getCantidadProductosEnStock() {
         double totalStock=0;
         for(ElementoP elemento: elementos){
@@ -67,6 +60,15 @@ public class Categoria extends ElementoP {
                                                         // y recorro y agrego desde esa diferencia hasta el final.
         for (int i = desde; i < palabrasClave.size(); i++) {
             resultado.add(palabrasClave.get(i));
+        }
+        return resultado;
+    }
+
+    @Override
+    public ArrayList<ElementoP> buscar(Condicion condicion) {
+        ArrayList<ElementoP> resultado = new ArrayList<>();
+        for(ElementoP elemento: elementos){
+            elementos.addAll(elemento.buscar(condicion));
         }
         return resultado;
     }
