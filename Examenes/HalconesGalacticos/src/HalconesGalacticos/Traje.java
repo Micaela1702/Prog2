@@ -24,7 +24,7 @@ public class Traje extends Elemento{
 
     @Override
     public ArrayList<String> getMetales() {
-        return null;
+       return new ArrayList<>(metalesUsados);
     }
 
     @Override

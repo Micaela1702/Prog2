@@ -14,4 +14,28 @@ public class MiembroEquipo {
         this.habilidadPrincipal = habilidadPrincipal;
         this.metalesFavoritos = new ArrayList<>();
     }
+
+    public String getNombreEnClave() {
+        return nombreEnClave;
+    }
+
+    public void setNombreEnClave(String nombreEnClave) {
+        this.nombreEnClave = nombreEnClave;
+    }
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    public String getHabilidadPrincipal() {
+        return habilidadPrincipal;
+    }
+
+    public void setHabilidadPrincipal(String habilidadPrincipal) {
+        this.habilidadPrincipal = habilidadPrincipal;
+    }
 }
