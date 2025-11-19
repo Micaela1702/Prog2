@@ -19,7 +19,7 @@ public class Traje extends Elemento{
 
     @Override
     public double getTalle() {
-        return 0;
+        return talle;
     }
 
     @Override
@@ -27,8 +27,4 @@ public class Traje extends Elemento{
        return new ArrayList<>(metalesUsados);
     }
 
-    @Override
-    public ArrayList<Traje> buscar(Condicion condicion) {
-        return null;
-    }
 }

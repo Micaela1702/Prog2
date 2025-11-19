@@ -4,21 +4,21 @@ import HalconesGalacticos.Condiciones.Condicion;
 
 import java.util.ArrayList;
 
-public class EquipoTactico extends Elemento{
-    private ArrayList<Elemento> elementos;
+public class EquipoTactico extends Elemento {
+    protected ArrayList<Elemento> elementos;
 
 
-    public void addElemento(Elemento e){
-        if(!elementos.contains(e)){
+    public void addElemento(Elemento e) {
+        if (!elementos.contains(e)) {
             elementos.add(e);
         }
     }
 
     @Override
     public double getTalle() {
-        double talleMenor=0;
-        for(Elemento e: elementos){
-            if(e.getTalle() < talleMenor){
+        double talleMenor = 0;
+        for (Elemento e : elementos) {
+            if (e.getTalle() < talleMenor) {
                 talleMenor = e.getTalle();
             }
         }
@@ -38,8 +38,4 @@ public class EquipoTactico extends Elemento{
         return resultado;
     }
 
-    @Override
-    public ArrayList<Traje> buscar(Condicion condicion) {
-        return null;
-    }
 }

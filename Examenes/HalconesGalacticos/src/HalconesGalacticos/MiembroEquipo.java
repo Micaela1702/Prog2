@@ -1,5 +1,7 @@
 package HalconesGalacticos;
 
+import HalconesGalacticos.Condiciones.Condicion;
+
 import java.util.ArrayList;
 
 public class MiembroEquipo {
@@ -13,6 +15,13 @@ public class MiembroEquipo {
         this.altura = altura;
         this.habilidadPrincipal = habilidadPrincipal;
         this.metalesFavoritos = new ArrayList<>();
+    }
+    public void agregarMetales(String metal){
+        metalesFavoritos.add(metal);
+    }
+
+    public ArrayList<String> getMetalesFavoritos(){
+        return new ArrayList<>(metalesFavoritos);
     }
 
     public String getNombreEnClave() {
@@ -37,5 +46,13 @@ public class MiembroEquipo {
 
     public void setHabilidadPrincipal(String habilidadPrincipal) {
         this.habilidadPrincipal = habilidadPrincipal;
+    }
+
+    public ArrayList<MiembroEquipo> buscar(Condicion condicion) {
+        ArrayList<MiembroEquipo> resultado = new ArrayList<>();
+        if(condicion.cumple(this)){
+            resultado.add(this);
+        }
+        return resultado;
     }
 }
