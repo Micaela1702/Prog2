@@ -16,6 +16,7 @@ public class MiembroEquipo {
         this.habilidadPrincipal = habilidadPrincipal;
         this.metalesFavoritos = new ArrayList<>();
     }
+
     public void agregarMetales(String metal){
         metalesFavoritos.add(metal);
     }

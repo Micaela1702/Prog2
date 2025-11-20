@@ -1,6 +1,5 @@
 package HalconesGalacticos;
 
-import HalconesGalacticos.Condiciones.Condicion;
 
 import java.util.ArrayList;
 
@@ -38,4 +37,12 @@ public class EquipoTactico extends Elemento {
         return resultado;
     }
 
+    @Override
+    public ArrayList<Traje> listaTrajes(MiembroEquipo miembro) {
+        ArrayList<Traje> resultado = new ArrayList<>();
+        for(Elemento ele: elementos){
+            resultado.addAll(ele.listaTrajes(miembro));
+        }
+        return resultado;
+    }
 }

@@ -1,6 +1,5 @@
 package HalconesGalacticos;
 
-
 import java.util.ArrayList;
 
 public class EquipoEspecial extends EquipoTactico{
